@@ -248,18 +248,24 @@ text-align: end;
   position: absolute;
   /* top: -35%;
   left: 8%; */
+  height: 100%;
+  aspect-ratio: 1/1;
   top: -25%;
   left: 25%;
 }
 .banner-desc .right{
-  line-height: 1.4;
+  line-height: 1.1;
+  position: relative;
+  width: min-content;
 }
 .banner-desc .right h3{
   font-weight: 800;
   font-size: 60px;
+  width: max-content;
 }
 .banner-desc .right p{
   font-size: 18px;
+  width: 50%;
 }
 .banner-desc .right .company-desc{
   font-size: 14px;
