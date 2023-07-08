@@ -1,8 +1,8 @@
 import React from "react";
-import { client } from "../lib/client"
+import { client } from "../lib/client";
 import { Product, FooterBanner, HeroBanner } from "../components/";
 
-const Index = ({ products , bannerData }) => {
+const Index = ({ products, bannerData }) => {
 
   return (
     <>
@@ -12,24 +12,26 @@ const Index = ({ products , bannerData }) => {
         <p>Speakers of many variations</p>
       </div>
       <div className="products-container">
-        {products?.map((product) => product.name)}
+        {products?.map((product) => (
+          <Product product={product} />
+        ))}
       </div>
 
-      <FooterBanner />
+      <FooterBanner footerBanner={bannerData && bannerData[0]} />
     </>
   );
 };
 
 export const getServerSideProps = async () => {
-  const productQuery = '*[_type == "product" ]'
-  const products = await client.fetch(productQuery)
+  const productQuery = '*[_type == "product" ]';
+  const products = await client.fetch(productQuery);
 
-  const bannerQuery = '*[_type == "banner" ]'
-  const bannerData = await client.fetch(bannerQuery)
+  const bannerQuery = '*[_type == "banner" ]';
+  const bannerData = await client.fetch(bannerQuery);
 
   return {
-    props: { products , bannerData }
-  }
-}
+    props: { products, bannerData },
+  };
+};
 
 export default Index;
