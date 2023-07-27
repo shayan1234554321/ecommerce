@@ -22,7 +22,7 @@ export default async function handler(req, res) {
               "image-",
               "https://cdn.sanity.io/images/fwib564z/production/"
             )
-            .replace("-webp", ".webp");
+            .replace(/-webp|-png/g, (match) => (match === "-webp" ? ".webp" : ".png"));
 
           return {
             price_data: {
