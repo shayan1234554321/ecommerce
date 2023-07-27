@@ -37,7 +37,7 @@
   <ul>
     <li>Next.js</li>
     <li>Stripe.js</li>
-    <li>Sanity</li>
+    <li><a href="https://future-store.sanity.studio/desk/" >Sanity</a></li>
     <li>canvas-confetti</li>
     <li>react-hot-toast</li>
     <li>react-icons</li>
